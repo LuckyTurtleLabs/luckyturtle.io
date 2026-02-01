@@ -1,18 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>LuckyTurtle Labs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>LuckyTurtle Labs — Open Mining & Node Infrastructure</title>
+  <meta name="description" content="LuckyTurtle Labs builds open, self-hosted mining and node infrastructure focused on ownership, efficiency, and independence." />
+
   <style>
-    body { background:#0b1f2a; color:#e6f2f0; font-family: Arial, sans-serif; text-align:center; padding:80px 20px; }
-    h1 { color:#4cd964; }
-    p { max-width: 620px; margin: 16px auto; line-height: 1.6; }
+    :root {
+      --bg1: #0a1420;
+      --bg2: #0b1e2e;
+      --text: #e9f1ff;
+      --muted: rgba(233, 241, 255, 0.72);
+      --accent: #36d27a; /* turtle green */
+      --card: rgba(255, 255, 255, 0.05);
+      --stroke: rgba(255, 255, 255, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+      background:
+        radial-gradient(900px 500px at 20% 20%, rgba(54, 210, 122, 0.16), transparent 60%),
+        radial-gradient(700px 400px at 80% 30%, rgba(79, 140, 255, 0.12), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+    }
+
+    .card {
+      width: 100%;
+      max-width: 860px;
+      padding: 42px 38px;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: 0.2px;
+      line-height: 1.1;
+    }
+
+    .accent {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    p {
+      margin: 14px auto;
+      max-width: 64ch;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(0, 0, 0, 0.14);
+      color: rgba(233, 241, 255, 0.82);
+      font-size: 14px;
+      letter-spacing: 0.2px;
+      user-select: none;
+    }
+
+    .status {
+      margin-top: 18px;
+      font-weight: 600;
+      color: rgba(233, 241, 255, 0.88);
+    }
+
+    .contact {
+      margin-top: 22px;
+      font-size: 15px;
+      opacity: 0.75;
+    }
+
+    .contact a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(233, 241, 255, 0.35);
+    }
+
+    .contact a:hover {
+      border-bottom-color: rgba(54, 210, 122, 0.8);
+      color: var(--accent);
+    }
   </style>
 </head>
+
 <body>
-  <h1>🐢 LuckyTurtle Labs™</h1>
-  <p>Building mining and node infrastructure focused on ownership, efficiency, and independence.</p>
-  <p>🚧 Site launching soon</p>
+  <main class="card">
+    <h1>🐢 <span class="accent">LuckyTurtle Labs™</span></h1>
+
+    <p>
+      Building open, self-hosted mining and node infrastructure focused on
+      <strong>ownership</strong>, <strong>efficiency</strong>, and <strong>independence</strong>.
+    </p>
+
+    <div class="pill-row">
+      <div class="pill">Bitcoin nodes</div>
+      <div class="pill">Mining software</div>
+      <div class="pill">Embedded hardware</div>
+    </div>
+
+    <p class="status">🚧 Public launch in progress</p>
+
+    <p class="contact">
+      Contact: <a href="mailto:hello@luckyturtle.io">hello@luckyturtle.io</a>
+    </p>
+  </main>
 </body>
 </html>
