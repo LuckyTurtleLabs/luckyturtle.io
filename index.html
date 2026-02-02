@@ -71,7 +71,7 @@
         radial-gradient(700px 400px at 80% 30%, rgba(79, 140, 255, 0.12), transparent 60%),
         linear-gradient(180deg, var(--bg1), var(--bg2));
     }
-
+    
     .card {
       width: 100%;
       max-width: 860px;
@@ -110,6 +110,15 @@
       gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
+    }
+    .pill-link {
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .pill-link:hover {
+      border-color: rgba(54, 210, 122, 0.7);
+      color: var(--accent);
     }
 
     .pill {
@@ -161,7 +170,9 @@
       <div class="pill">Bitcoin nodes</div>
       <div class="pill">Mining software</div>
       <div class="pill">Embedded hardware</div>
+      <a class="pill pill-link" href="/projects.html">Projects</a>
     </div>
+
 
     <p class="status">🚧 Public launch in progress</p>
 
