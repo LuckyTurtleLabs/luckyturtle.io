@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — LuckyTurtle Labs</title>
+  <meta name="description" content="Active infrastructure projects by LuckyTurtle Labs." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+
+  <style>
+    :root {
+      --bg1: #0a1420;
+      --bg2: #0b1e2e;
+      --text: #e9f1ff;
+      --muted: rgba(233, 241, 255, 0.72);
+      --accent: #36d27a;
+      --card: rgba(255, 255, 255, 0.05);
+      --stroke: rgba(255, 255, 255, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 20% -10%, #10344d 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg2), var(--bg1));
+    }
+
+    .card {
+      width: 100%;
+      max-width: 720px;
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      padding: 28px;
+      backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .project {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--stroke);
+    }
+
+    .project h2 {
+      margin: 0 0 6px 0;
+      font-size: 1.1rem;
+    }
+
+    .project p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <h1>Projects</h1>
+
+    <div class="project">
+      <h2>LuckyTurtle Miner</h2>
+      <p>
+        Embedded and low-power mining devices focused on transparency,
+        efficiency, and user ownership.
+      </p>
+    </div>
+
+    <div class="project">
+      <h2>LuckyTurtle Node</h2>
+      <p>
+        Self-hosted Bitcoin node infrastructure for sovereign verification
+        and private network participation.
+      </p>
+    </div>
+
+    <div class="project">
+      <h2>Infrastructure & Pool Research</h2>
+      <p>
+        Private research into open mining pool software, monitoring,
+        and decentralized payout models.
+      </p>
+    </div>
+
+    <p style="margin-top:24px;">
+      ← <a href="/">Back to home</a>
+    </p>
+  </main>
+</body>
+</html>
