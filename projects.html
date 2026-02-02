@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects — LuckyTurtle Labs</title>
-  <meta name="description" content="Active infrastructure projects by LuckyTurtle Labs." />
-
+  <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#36d27a">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>LuckyTurtle Labs — Projects</title>
+  <meta name="description" content="LuckyTurtle Labs projects: miners, nodes, embedded hardware, and open infrastructure." />
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LuckyTurtle Labs™ — Projects">
+  <meta property="og:description" content="Miners. Nodes. Embedded hardware. Open infrastructure — built for ownership and independence.">
+  <meta property="og:url" content="https://luckyturtle.io/projects.html">
+  <meta property="og:image" content="https://luckyturtle.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LuckyTurtle Labs™ — Projects">
+  <meta name="twitter:description" content="Miners. Nodes. Embedded hardware. Open infrastructure — built for ownership and independence.">
+  <meta name="twitter:image" content="https://luckyturtle.io/og-image.png">
 
   <style>
     :root {
@@ -16,9 +36,11 @@
       --bg2: #0b1e2e;
       --text: #e9f1ff;
       --muted: rgba(233, 241, 255, 0.72);
-      --accent: #36d27a;
-      --card: rgba(255, 255, 255, 0.05);
-      --stroke: rgba(255, 255, 255, 0.08);
+      --accent: #36d27a; /* turtle green */
+      --card: rgba(255, 255, 255, 0.06);
+      --stroke: rgba(255, 255, 255, 0.10);
+      --shadow: rgba(0, 0, 0, 0.45);
+      --glass: rgba(255, 255, 255, 0.06);
     }
 
     * { box-sizing: border-box; }
@@ -29,87 +51,329 @@
       display: grid;
       place-items: center;
       padding: 28px;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:
-        radial-gradient(900px 500px at 20% -10%, #10344d 0%, transparent 60%),
-        linear-gradient(180deg, var(--bg2), var(--bg1));
+        radial-gradient(900px 600px at 20% 15%, rgba(54, 210, 122, 0.15), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(89, 170, 255, 0.16), transparent 55%),
+        linear-gradient(145deg, var(--bg1), var(--bg2));
+    }
+
+    .wrap {
+      width: min(980px, 100%);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand .mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+
+    .brand .mark img {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+
+    .brand .name {
+      font-size: 16px;
+      letter-spacing: 0.2px;
+      font-weight: 700;
+    }
+    .brand .name span {
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 1;
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+      user-select: none;
+    }
+    .pill:hover {
+      transform: translateY(-1px);
+      border-color: rgba(54, 210, 122, 0.55);
+      background: rgba(54, 210, 122, 0.08);
+    }
+    .pill.active {
+      border-color: rgba(54, 210, 122, 0.70);
+      background: rgba(54, 210, 122, 0.10);
+      color: var(--text);
     }
 
     .card {
-      width: 100%;
-      max-width: 720px;
-      background: var(--card);
+      padding: 22px;
+      border-radius: 18px;
+      background: var(--glass);
       border: 1px solid var(--stroke);
-      border-radius: 16px;
-      padding: 28px;
-      backdrop-filter: blur(6px);
+      box-shadow: 0 22px 70px var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     h1 {
-      margin-top: 0;
-      color: var(--accent);
-    }
-
-    .project {
-      margin-top: 20px;
-      padding-top: 16px;
-      border-top: 1px dashed var(--stroke);
-    }
-
-    .project h2 {
       margin: 0 0 6px 0;
-      font-size: 1.1rem;
+      font-size: 26px;
+      letter-spacing: 0.2px;
     }
-
-    .project p {
-      margin: 0;
+    .sub {
+      margin: 0 0 14px 0;
       color: var(--muted);
-      font-size: 0.95rem;
+      line-height: 1.5;
+      font-size: 14px;
     }
 
-    a {
-      color: var(--accent);
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .proj {
+      grid-column: span 12;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      padding: 16px;
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+    }
+    .proj:hover {
+      transform: translateY(-1px);
+      border-color: rgba(54, 210, 122, 0.45);
+      background: rgba(54, 210, 122, 0.05);
+    }
+
+    @media (min-width: 820px) {
+      .proj { grid-column: span 6; }
+    }
+
+    .proj .row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .proj h2 {
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: 0.2px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      white-space: nowrap;
+      color: var(--muted);
+    }
+    .badge.live {
+      border-color: rgba(54, 210, 122, 0.50);
+      background: rgba(54, 210, 122, 0.10);
+      color: var(--text);
+    }
+    .badge.building {
+      border-color: rgba(89, 170, 255, 0.45);
+      background: rgba(89, 170, 255, 0.10);
+      color: var(--text);
+    }
+
+    .proj p {
+      margin: 0 0 12px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
       text-decoration: none;
+      font-size: 13px;
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(54, 210, 122, 0.55);
+      background: rgba(54, 210, 122, 0.08);
     }
 
-    a:hover {
-      text-decoration: underline;
+    .btn.primary {
+      border-color: rgba(54, 210, 122, 0.65);
+      background: rgba(54, 210, 122, 0.12);
+    }
+
+    .footer {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(233, 241, 255, 0.35);
+      padding-bottom: 2px;
+    }
+    .footer a:hover {
+      border-bottom-color: rgba(54, 210, 122, 0.8);
+      color: var(--accent);
     }
   </style>
 </head>
 
 <body>
-  <main class="card">
-    <h1>Projects</h1>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="/index.html" aria-label="Back to home">
+        <span class="mark" aria-hidden="true">
+          <img src="/favicon-32.png" alt="">
+        </span>
+        <span class="name"><span>LuckyTurtle</span> Labs™</span>
+      </a>
 
-    <div class="project">
-      <h2>LuckyTurtle Miner</h2>
-      <p>
-        Embedded and low-power mining devices focused on transparency,
-        efficiency, and user ownership.
-      </p>
+      <nav class="nav" aria-label="Site navigation">
+        <a class="pill" href="/index.html">Home</a>
+        <a class="pill active" href="/projects.html">Projects</a>
+      </nav>
     </div>
 
-    <div class="project">
-      <h2>LuckyTurtle Node</h2>
-      <p>
-        Self-hosted Bitcoin node infrastructure for sovereign verification
-        and private network participation.
+    <main class="card">
+      <h1>Projects</h1>
+      <p class="sub">
+        A product-first look at what we’re building — focused on ownership, efficiency, and independence.
       </p>
-    </div>
 
-    <div class="project">
-      <h2>Infrastructure & Pool Research</h2>
-      <p>
-        Private research into open mining pool software, monitoring,
-        and decentralized payout models.
-      </p>
-    </div>
+      <div class="grid">
+        <section class="proj" aria-label="LuckyTurtleMiner">
+          <div class="row">
+            <h2>LuckyTurtleMiner</h2>
+            <span class="badge building">🧩 Building</span>
+          </div>
+          <p>
+            Compact embedded miners with a clean black+green interface — designed for reliability, low overhead, and smooth setup.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="/index.html">View brand home</a>
+            <a class="btn" href="mailto:turtlelabs.ops@outlook.com?subject=LuckyTurtleMiner%20interest">Request updates</a>
+          </div>
+        </section>
 
-    <p style="margin-top:24px;">
-      ← <a href="/">Back to home</a>
-    </p>
-  </main>
+        <section class="proj" aria-label="LuckyTurtleNode">
+          <div class="row">
+            <h2>LuckyTurtleNode</h2>
+            <span class="badge building">🧱 Building</span>
+          </div>
+          <p>
+            Self-hosted Bitcoin node + pool infrastructure fundamentals. Built to be understandable, maintainable, and yours.
+          </p>
+          <div class="actions">
+            <a class="btn" href="mailto:turtlelabs.ops@outlook.com?subject=LuckyTurtleNode%20updates">Get updates</a>
+            <a class="btn" href="/index.html">Back to home</a>
+          </div>
+        </section>
+
+        <section class="proj" aria-label="Open Infrastructure">
+          <div class="row">
+            <h2>Open Infrastructure</h2>
+            <span class="badge live">✅ Live</span>
+          </div>
+          <p>
+            This site, branding assets, and deployment pipeline — tuned for speed, reliability, and clean sharing (OG, manifest, icons).
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="https://luckyturtle.io/" target="_blank" rel="noopener">Visit site</a>
+            <a class="btn" href="https://github.com/LuckyTurtleLabs/luckyturtle.io" target="_blank" rel="noopener">View repo</a>
+          </div>
+        </section>
+
+        <section class="proj" aria-label="Roadmap">
+          <div class="row">
+            <h2>Roadmap</h2>
+            <span class="badge building">📍 Next</span>
+          </div>
+          <p>
+            Next up: a simple “Updates” section, project screenshots, and a lightweight docs page so people can follow along.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:turtlelabs.ops@outlook.com?subject=Roadmap%20feedback">Send feedback</a>
+            <a class="btn" href="https://x.com/LuckyTurtleLabs" target="_blank" rel="noopener">Follow on X</a>
+          </div>
+        </section>
+      </div>
+
+      <div class="footer">
+        <div>Want a project added here? Email us.</div>
+        <div><a href="mailto:turtlelabs.ops@outlook.com">turtlelabs.ops@outlook.com</a></div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
+
