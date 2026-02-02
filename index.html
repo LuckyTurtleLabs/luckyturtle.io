@@ -31,37 +31,72 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "LuckyTurtle Labs",
-  "url": "https://luckyturtle.io",
-  "logo": "https://luckyturtle.io/favicon-512.png",
-  "sameAs": [
-    "https://x.com/LuckyTurtleLabs"
-  ],
-  "description": "LuckyTurtle Labs builds open, self-hosted mining and node infrastructure focused on ownership, efficiency, and independence.",
-  "hasPart": [
+  "@graph": [
     {
-      "@type": "SoftwareApplication",
-      "name": "LuckyTurtleMiner",
-      "applicationCategory": "MiningSoftware",
-      "operatingSystem": "Embedded",
-      "url": "https://luckyturtle.io/projects.html"
+      "@type": "Organization",
+      "@id": "https://luckyturtle.io/#org",
+      "name": "LuckyTurtle Labs",
+      "url": "https://luckyturtle.io/",
+      "logo": "https://luckyturtle.io/favicon-512.png",
+      "email": "turtlelabs.ops@outlook.com",
+      "sameAs": [
+        "https://x.com/LuckyTurtleLabs"
+      ]
     },
     {
-      "@type": "SoftwareApplication",
-      "name": "LuckyTurtleNode",
-      "applicationCategory": "BlockchainNode",
-      "operatingSystem": "Linux",
-      "url": "https://luckyturtle.io/projects.html"
+      "@type": "WebSite",
+      "@id": "https://luckyturtle.io/#website",
+      "url": "https://luckyturtle.io/",
+      "name": "LuckyTurtle Labs",
+      "publisher": { "@id": "https://luckyturtle.io/#org" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://luckyturtle.io/projects.html#webpage",
+      "url": "https://luckyturtle.io/projects.html",
+      "name": "Projects | LuckyTurtle Labs",
+      "isPartOf": { "@id": "https://luckyturtle.io/#website" },
+      "about": { "@id": "https://luckyturtle.io/#org" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://luckyturtle.io/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "LuckyTurtle Labs Projects",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "LuckyTurtleMiner",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "ESP32 / Embedded",
+              "url": "https://luckyturtle.io/projects.html#luckyturtleminer"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "LuckyTurtleNode",
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Linux",
+              "url": "https://luckyturtle.io/projects.html#luckyturtlenode"
+            }
+          }
+        ]
+      }
     }
   ]
 }
 </script>
 
-
-
-
-  <style>
+   <style>
     :root {
       --bg1: #0a1420;
       --bg2: #0b1e2e;
