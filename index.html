@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Favicon -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -9,209 +12,181 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#36d27a">
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>LuckyTurtle Labs — Open Mining & Node Infrastructure</title>
   <meta name="description" content="LuckyTurtle Labs builds open, self-hosted mining and node infrastructure focused on ownership, efficiency, and independence." />
+
   <!-- Open Graph / Social Preview -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="LuckyTurtle Labs™">
+  <meta property="og:title" content="LuckyTurtle Labs">
   <meta property="og:description" content="Open, self-hosted mining and node infrastructure focused on ownership, efficiency, and independence.">
   <meta property="og:url" content="https://luckyturtle.io/">
   <meta property="og:image" content="https://luckyturtle.io/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
-<!-- Twitter / X -->
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LuckyTurtle Labs™">
-  <meta name="twitter:description" content="Open, self-hosted mining and node infrastructure.">
+  <meta name="twitter:title" content="LuckyTurtle Labs">
+  <meta name="twitter:description" content="Open, self-hosted mining and node infrastructure focused on ownership, efficiency, and independence.">
   <meta name="twitter:image" content="https://luckyturtle.io/og-image.png">
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://luckyturtle.io/#org",
-      "name": "LuckyTurtle Labs",
-      "url": "https://luckyturtle.io/",
-      "logo": "https://luckyturtle.io/favicon-512.png",
-      "email": "turtlelabs.ops@outlook.com",
-      "sameAs": [
-        "https://x.com/LuckyTurtleLabs"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://luckyturtle.io/#website",
-      "url": "https://luckyturtle.io/",
-      "name": "LuckyTurtle Labs",
-      "publisher": { "@id": "https://luckyturtle.io/#org" }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://luckyturtle.io/projects.html#webpage",
-      "url": "https://luckyturtle.io/projects.html",
-      "name": "Projects | LuckyTurtle Labs",
-      "isPartOf": { "@id": "https://luckyturtle.io/#website" },
-      "about": { "@id": "https://luckyturtle.io/#org" },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://luckyturtle.io/og-image.png",
-        "width": 1200,
-        "height": 630
-      },
-      "mainEntity": {
-        "@type": "ItemList",
-        "name": "LuckyTurtle Labs Projects",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "SoftwareApplication",
-              "name": "LuckyTurtleMiner",
-              "applicationCategory": "DeveloperApplication",
-              "operatingSystem": "ESP32 / Embedded",
-              "url": "https://luckyturtle.io/projects.html#luckyturtleminer"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "SoftwareApplication",
-              "name": "LuckyTurtleNode",
-              "applicationCategory": "DeveloperApplication",
-              "operatingSystem": "Linux",
-              "url": "https://luckyturtle.io/projects.html#luckyturtlenode"
-            }
-          }
-        ]
-      }
-    }
-  ]
-}
-</script>
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"LuckyTurtle Labs",
+    "url":"https://luckyturtle.io/",
+    "logo":"https://luckyturtle.io/favicon-512.png",
+    "email":"turtlelabs.ops@outlook.com",
+    "sameAs":[
+      "https://x.com/LuckyTurtleLabs"
+    ]
+  }
+  </script>
 
-   <style>
-    :root {
-      --bg1: #0a1420;
-      --bg2: #0b1e2e;
-      --text: #e9f1ff;
-      --muted: rgba(233, 241, 255, 0.72);
-      --accent: #36d27a; /* turtle green */
-      --card: rgba(255, 255, 255, 0.05);
-      --stroke: rgba(255, 255, 255, 0.08);
+  <style>
+    :root{
+      --bg1:#0a1420;
+      --bg2:#0b1e2e;
+      --text:#e9f1ff;
+      --muted:rgba(233,241,255,.72);
+      --accent:#36d27a;
+      --card:rgba(255,255,255,.07);
+      --stroke:rgba(255,255,255,.10);
+      --pill:rgba(0,0,0,.18);
+      --shadow:0 18px 50px rgba(0,0,0,.35);
     }
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 28px;
-      color: var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:28px;
+      color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       background:
-        radial-gradient(900px 500px at 20% 20%, rgba(54, 210, 122, 0.16), transparent 60%),
-        radial-gradient(700px 400px at 80% 30%, rgba(79, 140, 255, 0.12), transparent 60%),
-        linear-gradient(180deg, var(--bg1), var(--bg2));
-    }
-    
-    .card {
-      width: 100%;
-      max-width: 860px;
-      padding: 42px 38px;
-      border-radius: 18px;
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      text-align: center;
+        radial-gradient(900px 500px at 20% 10%, rgba(54,210,122,.25), transparent 55%),
+        radial-gradient(900px 500px at 80% 20%, rgba(120,190,255,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg2), var(--bg1));
     }
 
-    h1 {
-      margin: 0 0 10px 0;
-      font-size: clamp(30px, 4vw, 46px);
-      letter-spacing: 0.2px;
-      line-height: 1.1;
+    .card{
+      width:min(860px, 92vw);
+      padding:34px 34px 26px;
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:22px;
+      backdrop-filter: blur(14px);
+      box-shadow:var(--shadow);
+      text-align:center;
     }
 
-    .accent {
-      color: var(--accent);
-      font-weight: 700;
+    h1{
+      margin:0 0 12px;
+      font-size:44px;
+      letter-spacing:.2px;
+      line-height:1.1;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
     }
 
-    p {
-      margin: 14px auto;
-      max-width: 64ch;
-      font-size: 18px;
-      line-height: 1.6;
-      color: var(--muted);
+    .mark{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:34px;
+      height:34px;
+      border-radius:10px;
+      background:rgba(54,210,122,.10);
+      border:1px solid rgba(54,210,122,.25);
     }
 
-    .pill-row {
-      margin-top: 18px;
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .pill-link {
-      display: inline-block;
-      cursor: pointer;
+    .accent{ color: var(--accent); }
+
+    p{
+      margin:0 auto 18px;
+      max-width:720px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.55;
     }
 
-    .pill-link:hover {
-      border-color: rgba(54, 210, 122, 0.7);
-      color: var(--accent);
+    strong{ color: var(--text); font-weight:700; }
+
+    .pill-row{
+      margin:18px 0 14px;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
     }
 
-    .pill {
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--stroke);
-      background: rgba(0, 0, 0, 0.14);
-      color: rgba(233, 241, 255, 0.82);
-      font-size: 14px;
-      letter-spacing: 0.2px;
-      user-select: none;
+    .pill{
+      padding:9px 14px;
+      font-size:13px;
+      border-radius:999px;
+      background:var(--pill);
+      border:1px solid rgba(255,255,255,.10);
+      color:rgba(233,241,255,.86);
+      text-decoration:none;
+      transition: transform .08s ease, border-color .18s ease;
     }
 
-    .status {
-      margin-top: 18px;
-      font-weight: 600;
-      color: rgba(233, 241, 255, 0.88);
+    .pill:hover{
+      border-color: rgba(54,210,122,.45);
+      transform: translateY(-1px);
     }
 
-    .contact {
-      margin-top: 22px;
-      font-size: 15px;
-      opacity: 0.75;
+    .pill.primary{
+      color:#0c1a16;
+      background: linear-gradient(135deg, rgba(54,210,122,1), rgba(140,255,206,1));
+      border-color: rgba(54,210,122,.55);
+      font-weight:700;
     }
 
-    .contact a {
+    .status{
+      margin:12px 0 14px;
+      font-size:14px;
+      color:rgba(233,241,255,.80);
+    }
+
+    .contact{
+      margin-top:10px;
+      font-size:14px;
+      color:rgba(233,241,255,.78);
+    }
+
+    .contact a{
       color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px dashed rgba(233, 241, 255, 0.35);
+      text-decoration:none;
+      border-bottom:1px dashed rgba(233,241,255,.35);
+      padding-bottom:1px;
     }
 
-    .contact a:hover {
-      border-bottom-color: rgba(54, 210, 122, 0.8);
+    .contact a:hover{
       color: var(--accent);
+      border-bottom-color: rgba(54,210,122,.75);
+    }
+
+    @media (max-width:520px){
+      h1{ font-size:34px; }
+      .card{ padding:26px 18px 20px; }
     }
   </style>
 </head>
 
 <body>
   <main class="card">
-    <h1>🐢 <span class="accent">LuckyTurtle Labs™</span></h1>
+    <h1>
+      <span class="mark">🐢</span>
+      <span class="accent">LuckyTurtle Labs™</span>
+    </h1>
 
     <p>
       Building open, self-hosted mining and node infrastructure focused on
@@ -219,18 +194,17 @@
     </p>
 
     <div class="pill-row">
-      <div class="pill">Bitcoin nodes</div>
-      <div class="pill">Mining software</div>
-      <div class="pill">Embedded hardware</div>
-      <a class="pill pill-link" href="/projects.html">Projects</a>
+      <span class="pill">Bitcoin nodes</span>
+      <span class="pill">Mining software</span>
+      <span class="pill">Embedded hardware</span>
+      <a class="pill primary" href="/projects.html">Projects</a>
     </div>
 
+    <div class="status">🚧 Public launch in progress</div>
 
-    <p class="status">🚧 Public launch in progress</p>
-
-    <p class="contact">
-      Contact: <a href="turtlelabs.ops@outlook.com">turtlelabs.ops@outlook.com</a>
-    </p>
+    <div class="contact">
+      Contact: <a href="mailto:turtlelabs.ops@outlook.com">turtlelabs.ops@outlook.com</a>
+    </div>
   </main>
 </body>
 </html>
